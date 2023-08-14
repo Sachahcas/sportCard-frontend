@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Varela+Round&display=swap');
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-image: url('../public/warrior.jpg');
+  background-size: cover; /* Ajustez la taille du fond d'écran pour couvrir toute la div */
+  background-position: center; /* Centre l'image */
+  background-repeat: no-repeat;;
+  color: #C0C0C0;
+  font-family: 'Oswald', sans-serif; 
 }
 
 * {

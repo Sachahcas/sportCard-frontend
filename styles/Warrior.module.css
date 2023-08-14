@@ -1,0 +1,28 @@
+.bestTotalDisplay {
+    border-top: 1px white solid;
+    padding-top: 20px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 15px #ffff00, 0 0 20px #ffff00;
+}
+.bestNameDisplay {
+    padding-top: 20px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 15px #ffff00, 0 0 20px #ffff00;
+}
+.nameDisplay {
+    padding-top: 20px;
+    font-size: 20px;
+    color: white;
+}
+.totalDisplay {
+    border-top: 1px white solid;
+    padding-top: 20px;
+    font-size: 20px;
+    color: white;
+}
+.warriorCard p {
+    text-align: justify;
+    justify-content: space-between;
+}
