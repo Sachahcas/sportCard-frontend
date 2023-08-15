@@ -38,6 +38,7 @@
   margin:3px;
   border:none;
   box-shadow: 0 0 15px rgba(255,255,0,1.5);
+  cursor: pointer;
 }
 .validateButton {
   background-color: transparent;
@@ -48,6 +49,7 @@
   border: 1px solid white;
   margin:3px;
   box-shadow: 0 0 15px rgba(255,255,0,0.5);
+  cursor: pointer;
 }
 .input {
   margin-bottom: 30px;
@@ -55,7 +57,7 @@
   border: none;
   border-bottom: 1px white solid;
   width: 20vw;
-  height:30px;
+  height: 30px;
   font-size: 20px;
   color: whitesmoke
 }

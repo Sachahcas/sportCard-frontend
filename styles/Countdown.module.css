@@ -1,0 +1,14 @@
+.countdownDiv {
+    display : flex;
+    gap: 30px;
+}
+.timerSubDiv {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    gap:0px;
+}
+.timerP {
+    margin:0px;
+    font-size: 20px;
+}

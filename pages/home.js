@@ -2,6 +2,7 @@ import styles from '../styles/home.module.css';
 import { useSelector } from 'react-redux';
 import Card from '../components/Card';
 import Warrior from '../components/Warrior';
+import Countdown from '../components/Countdown';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Button, Modal } from 'antd';
@@ -9,6 +10,7 @@ import { Button, Modal } from 'antd';
 const backendIP = process.env.NEXT_PUBLIC_REACT_APP_BACKEND_IP;
 
 function Home() {
+  const targetDate = "2023-08-15T12:46:00";
   const loggedName = useSelector((state) => state.users.value)
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -97,11 +99,12 @@ function Home() {
 
   return (
     <div>
-      <Modal className={styles.modal} title="T'es sûr de toi?" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+      <Modal className="newStyle" title="T'es sûr de toi?" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
         <p>Tu nous la met pas à l'envers ? Ca serait contraire à l'esprit guerrier ça.</p>
         <p>Aussi, le score sera envoyé dans le Valhalla, on ne pourra plus y toucher après.</p>
       </Modal>
       <main className={styles.main}>
+        <Countdown targetDate={targetDate}/>
           <h1 className={styles.title}>
           LEADERBOARD DES GUERRIERS
           </h1>
