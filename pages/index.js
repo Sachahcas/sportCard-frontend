@@ -39,13 +39,13 @@ const clickedOnSignInGo = () => {
     <div>
       <main className={styles.main}>
         <h1 className={styles.title}>
-        T'es nouveau?
+        T'es nouveau ?
         </h1>
         <input className={styles.input} value={name} onChange={(e) => setName(e.target.value)} placeholder="Mets ton prénom"></input>
         <button className={styles.validateButton} onClick={() => clickedOnGo()}>Go</button>
         {alreadyExists && <p>Y a déjà un guerrier avec ce nom, trouves-en un mieux pour lui montrer qui tu es</p>}
         <h1 className={styles.title}>
-        T'es déjà un guerrier?
+        T'es déjà un guerrier ?
         </h1>
         <input className={styles.input} value={nameLogin} onChange={(e) => setNameLogin(e.target.value)} placeholder="Mets ton prénom de guerrier"></input>
         <button className={styles.validateButton} onClick={() => clickedOnSignInGo()}>Go</button>
