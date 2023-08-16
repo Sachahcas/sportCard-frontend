@@ -14,7 +14,6 @@ function Index() {
     const [wrongName, setWrongName] = useState(false)
     const [alreadyExists, setAlreadyExists] = useState(false)
     const router = useRouter();
-    console.log(nameLogin);
 
 const clickedOnGo = () => {
     dispatch(addUserToStore(name))

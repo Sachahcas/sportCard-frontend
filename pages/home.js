@@ -15,8 +15,6 @@ function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inactiveScreen, setInactiveScreen] = useState(false)
 
-  console.log("inactiveScreen",inactiveScreen)
-
 
   if (typeof window !== 'undefined' && !loggedName) {
     const router = useRouter();
@@ -53,7 +51,6 @@ function Home() {
     })
   },[resetUseEffect])
 
-  console.log('bordel')
 
   const highestScore = warriors.length > 0 ? Math.max(...warriors.map(warrior => warrior.score)) : 0;
 
