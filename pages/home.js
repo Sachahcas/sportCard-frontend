@@ -10,7 +10,7 @@ import { Button, Modal } from 'antd';
 const backendIP = process.env.NEXT_PUBLIC_REACT_APP_BACKEND_IP;
 
 function Home() {
-  const targetDate = "2023-08-31T00:00:00";
+  const targetDate = "2023-09-01T00:00:00";
   const loggedName = useSelector((state) => state.users.value)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inactiveScreen, setInactiveScreen] = useState(false)
