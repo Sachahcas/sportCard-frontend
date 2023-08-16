@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { emptyStore } from '../reducers/users';
 import Card from '../components/Card';
 import Warrior from '../components/Warrior';
 import Countdown from '../components/Countdown';
@@ -10,14 +11,16 @@ import { Button, Modal } from 'antd';
 const backendIP = process.env.NEXT_PUBLIC_REACT_APP_BACKEND_IP;
 
 function Home() {
+
+  const dispatch = useDispatch()
   const targetDate = "2023-09-01T00:00:00";
   const loggedName = useSelector((state) => state.users.value)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inactiveScreen, setInactiveScreen] = useState(false)
+  const router = useRouter();
 
 
   if (typeof window !== 'undefined' && !loggedName) {
-    const router = useRouter();
     router.push('/');
   }
 
@@ -103,6 +106,11 @@ function Home() {
     console.log("Le compte à rebours est terminé !");
   }
 
+  const handleLogout = () => {
+    dispatch(emptyStore())
+    router.push('/');
+  }
+
 
   return (
     <div>
@@ -111,19 +119,20 @@ function Home() {
         <p>Aussi, le score sera envoyé dans le Valhalla, on ne pourra plus y toucher après.</p>
       </Modal>
       <main className={styles.main}>
+        <button onClick={handleLogout}>Déconnexion</button>
         <Countdown targetDate={targetDate} countDownComplete={handleCountdownComplete}/>
-          <h1 className={styles.title}>
-          LEADERBOARD DES GUERRIERS
-          </h1>
-          <div className={styles.leaderBoardDiv}>
-          {mappedWarriors}
-          </div>
-          <h2>Session de {loggedName} en cours</h2>
-          <h2>Score : {totalScore}</h2>
-          <button className={styles.validateButton} onClick={() => totalScore && setIsModalOpen(true)}>VALIDER LA SESSION</button>
-          <Card resetScore={resetScore} updateScore={updateScore} scores={scores}/>
-          <h2>BRING SALLY UP CHALLENGE</h2>
-          <button className={styles.veryBigButton} onClick={() => updateScore('sallyScore', 250)}>+250</button>
+        <h1 className={styles.title}>
+        LEADERBOARD DES GUERRIERS
+        </h1>
+        <div className={styles.leaderBoardDiv}>
+        {mappedWarriors}
+        </div>
+        <h2>Session de {loggedName} en cours</h2>
+        <h2>Score : {totalScore}</h2>
+        <button className={styles.validateButton} onClick={() => totalScore && setIsModalOpen(true)}>VALIDER LA SESSION</button>
+        <Card resetScore={resetScore} updateScore={updateScore} scores={scores}/>
+        <h2>BRING SALLY UP CHALLENGE</h2>
+        <button className={styles.veryBigButton} onClick={() => updateScore('sallyScore', 250)}>+250</button>
       </main>
     </div>
   );

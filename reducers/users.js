@@ -13,8 +13,11 @@ export const usersSlice = createSlice({
    addUserToStore: (state, action) => {
      state.value=action.payload;
    },
+   emptyStore: (state) => {
+    state.value=''
+   }
  },
 });
 
-export const { addUserToStore } = usersSlice.actions;
+export const { addUserToStore, emptyStore } = usersSlice.actions;
 export default usersSlice.reducer;
