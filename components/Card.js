@@ -8,20 +8,16 @@ function Card(props) {
         <div className={styles.cardCategory}>
             <h3>Pompes {props.scores.pompesScore}</h3>
             <div className={styles.buttonDiv}>
-            <p>1 Pompe genoux</p>
-            <button className={styles.addButton} onClick={() => props.updateScore('pompesScore', 0.5)}>+0.5</button>
-            </div>
-            <div className={styles.buttonDiv}>
             <p>10 Pompes genoux</p>
-            <button className={styles.addButton} onClick={() => props.updateScore('pompesScore', 10)}>+10</button>
+            <button className={styles.addButton} onClick={() => props.updateScore('pompesScore', 10)}>+5</button>
             </div>
             <div className={styles.buttonDiv}>
             <p>1 Pompe</p>
-            <button className={styles.addButton} onClick={() => props.updateScore('pompesScore', 1)}>+1</button>
+            <button className={styles.addButton} onClick={() => props.updateScore('pompesScore', 1)}>+0.5</button>
             </div>
             <div className={styles.buttonDiv}>
             <p>10 Pompes</p>
-            <button className={styles.addButton} onClick={() => props.updateScore('pompesScore', 15)}>+15</button>
+            <button className={styles.addButton} onClick={() => props.updateScore('pompesScore', 15)}>+10</button>
             </div>
             <span onClick={() => {props.resetScore('pompesScore')}} className={styles.reset}>Reset</span>
 
