@@ -8,14 +8,14 @@
     justify-content: space-between;
   }
   .addButton {
-    color: black;
+    color: whitesmoke;
     width:50px;
     height: 50px;
     border-radius: 15px;
     margin:3px;
     margin-left: 10px;
     border:none;
-    background-color: rgb(255, 0, 208);
+    background-color: transparent;
     box-shadow: 0 0 5px rgba(255,255,255,0.9);
     cursor: pointer;
   }
