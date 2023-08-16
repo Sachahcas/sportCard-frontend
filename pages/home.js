@@ -109,7 +109,6 @@ function Home() {
 
   return (
     <div>
-      <div className="overlay"></div>
       <Modal className="newStyle" title="T'es sûr de toi?" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
         <p>Tu nous la met pas à l'envers ? Ca serait contraire à l'esprit guerrier ça.</p>
         <p>Aussi, le score sera envoyé dans le Valhalla, on ne pourra plus y toucher après.</p>
