@@ -119,7 +119,7 @@ function Home() {
         <p>Aussi, le score sera envoyé dans le Valhalla, on ne pourra plus y toucher après.</p>
       </Modal>
       <main className={styles.main}>
-        <button onClick={handleLogout}>Déconnexion</button>
+        <button className={styles.logoutButton} onClick={handleLogout}>Déconnexion</button>
         <Countdown targetDate={targetDate} countDownComplete={handleCountdownComplete}/>
         <h1 className={styles.title}>
         LEADERBOARD DES GUERRIERS
