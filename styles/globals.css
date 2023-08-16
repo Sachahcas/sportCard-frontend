@@ -13,3 +13,7 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.bodyStyle {
+  background-color: red;
+}
