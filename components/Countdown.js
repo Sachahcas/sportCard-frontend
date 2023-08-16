@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Countdown.module.css';
 
-const Countdown = ({ targetDate }) => {
+const Countdown = (props) => {
+  const [isFinished, setIsFinished] = useState(false)
+  
   const calculateTimeLeft = () => {
-    let difference = +new Date(targetDate) - +new Date();
+
+    let difference = +new Date(props.targetDate) - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -26,6 +29,11 @@ const Countdown = ({ targetDate }) => {
     }, 1000);
     return () => clearTimeout(timer);
   });
+
+  if (!timeLeft.days && !timeLeft.hours && !timeLeft.minutes && !timeLeft.seconds && isFinished===false) {
+    setIsFinished(true)
+    props.countDownComplete()
+  }
 
   return (
     <div className={styles.countdownDiv}>

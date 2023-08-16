@@ -10,9 +10,12 @@ import { Button, Modal } from 'antd';
 const backendIP = process.env.NEXT_PUBLIC_REACT_APP_BACKEND_IP;
 
 function Home() {
-  const targetDate = "2023-08-15T12:46:00";
+  const targetDate = "2023-08-25T14:15:00";
   const loggedName = useSelector((state) => state.users.value)
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [inactiveScreen, setInactiveScreen] = useState(false)
+
+  console.log("inactiveScreen",inactiveScreen)
 
 
   if (typeof window !== 'undefined' && !loggedName) {
@@ -41,16 +44,16 @@ function Home() {
     tractionsScore: 0,
     sallyScore: 0,
   };
-  console.log(scores)
 
   useEffect(() => {
     fetch(`${backendIP}/users/all`)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       setWarriors(data.warriors)
     })
   },[resetUseEffect])
+
+  console.log('bordel')
 
   const highestScore = warriors.length > 0 ? Math.max(...warriors.map(warrior => warrior.score)) : 0;
 
@@ -71,6 +74,7 @@ function Home() {
     .then(data => {
       data.result && setScores(initialScores)
       setResetUseEffect(!resetUseEffect)
+      setInactiveScreen(false)
     })
   }
 
@@ -97,14 +101,21 @@ function Home() {
     setIsModalOpen(false);
   };
 
+  const handleCountdownComplete = () => {
+    setInactiveScreen(true)
+    console.log("Le compte à rebours est terminé !");
+  }
+
+
   return (
     <div>
+      <div className="overlay"></div>
       <Modal className="newStyle" title="T'es sûr de toi?" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
         <p>Tu nous la met pas à l'envers ? Ca serait contraire à l'esprit guerrier ça.</p>
         <p>Aussi, le score sera envoyé dans le Valhalla, on ne pourra plus y toucher après.</p>
       </Modal>
       <main className={styles.main}>
-        <Countdown targetDate={targetDate}/>
+        <Countdown targetDate={targetDate} countDownComplete={handleCountdownComplete}/>
           <h1 className={styles.title}>
           LEADERBOARD DES GUERRIERS
           </h1>

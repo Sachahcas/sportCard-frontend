@@ -79,3 +79,13 @@
   gap:50px;
   border-bottom: 3px white solid;
 }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7); /* Légère transparence pour indiquer que la page est inactif */
+  z-index: 1000; /* Assurez-vous que cette valeur est plus grande que les autres z-index de votre application */
+  pointer-events: all; /* Cela intercepte tous les événements de souris */
+}
