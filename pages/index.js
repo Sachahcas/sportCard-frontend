@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import styles from '../styles/home.module.css';
+import styles from '../styles/Home.module.css';
 import { addUserToStore } from '../reducers/users';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
