@@ -79,11 +79,11 @@ function Card(props) {
             </div>
             <div className={styles.buttonDiv}>
             <p>1 Squat Emilie </p>
-            <button className={styles.addButton} onClick={() => props.updateScore('squatsScore', 10)}>+10</button>
+            <button className={styles.addButton} onClick={() => props.updateScore('squatsScore', 10)}>3</button>
             </div>
             <div className={styles.buttonDiv}>
             <p>10 Squats Emilie</p>
-            <button className={styles.addBigButton} onClick={() => props.updateScore('squatsScore', 150)}>+150</button>
+            <button className={styles.addBigButton} onClick={() => props.updateScore('squatsScore', 50)}>50</button>
             </div>
             <span onClick={() => {props.resetScore('squatsScore')}} className={styles.reset}>Reset</span>
         </div>
