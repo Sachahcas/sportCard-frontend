@@ -33,7 +33,7 @@ function Card(props) {
             <button className={styles.addButton} onClick={() => props.updateScore('abdosScore', 1)}>+1</button>
             </div>
             <div className={styles.buttonDiv}>
-            <p>20 Crunch</p>
+            <p>20 Crunchs</p>
             <button className={styles.addButton} onClick={() => props.updateScore('abdosScore', 15)}>+15</button>
             </div>
             <div className={styles.buttonDiv}>
@@ -79,7 +79,7 @@ function Card(props) {
             </div>
             <div className={styles.buttonDiv}>
             <p>1 Squat Emilie </p>
-            <button className={styles.addButton} onClick={() => props.updateScore('squatsScore', 10)}>3</button>
+            <button className={styles.addButton} onClick={() => props.updateScore('squatsScore', 3)}>3</button>
             </div>
             <div className={styles.buttonDiv}>
             <p>10 Squats Emilie</p>
