@@ -13,7 +13,7 @@ const backendIP = process.env.NEXT_PUBLIC_REACT_APP_BACKEND_IP;
 function Home() {
 
   const dispatch = useDispatch()
-  const targetDate = "2023-09-01T21:24:00";
+  const targetDate = "2023-09-02T00:00:00";
   const loggedName = useSelector((state) => state.users.value)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inactiveScreen, setInactiveScreen] = useState(false)
