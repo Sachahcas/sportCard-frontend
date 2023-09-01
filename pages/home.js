@@ -13,7 +13,7 @@ const backendIP = process.env.NEXT_PUBLIC_REACT_APP_BACKEND_IP;
 function Home() {
 
   const dispatch = useDispatch()
-  const targetDate = "2023-09-02T00:00:00";
+  const targetDate = "2023-09-01T21:24:00";
   const loggedName = useSelector((state) => state.users.value)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [inactiveScreen, setInactiveScreen] = useState(false)
@@ -134,6 +134,17 @@ function Home() {
         <h2>BRING SALLY UP CHALLENGE</h2>
         <button className={styles.veryBigButton} onClick={() => updateScore('sallyScore', 250)}>+250</button>
       </main>
+      {inactiveScreen && (
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(255, 0, 0, 0.1)', // Arrière-plan semi-transparent
+        zIndex: 1000 
+      }}></div>
+      )}
     </div>
   );
 }
